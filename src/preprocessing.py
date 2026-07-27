@@ -575,7 +575,7 @@ def generer_donnees():
 
     # Chargement des données
 
-    df = pd.read_csv("projet_prix_maisons.csv")
+    df = pd.read_csv("data/projet_prix_maisons.csv")
 
     # On isole la variable cible
 
