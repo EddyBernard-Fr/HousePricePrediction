@@ -1,0 +1,33 @@
+# Environnement virtuel
+.venv/
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Graphviz
+Graphviz-15.1.0-win64/
+
+# GUI
+GUI/
+
+# Catboost
+catboost_info/
+
+# Autres
+Autres/
+
+# Notebook
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Modèles lourds (si un jour tu en ajoutes)
+*.pkl
+*.joblib
