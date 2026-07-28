@@ -31,3 +31,8 @@ Thumbs.db
 # Modèles lourds (si un jour tu en ajoutes)
 *.pkl
 *.joblib
+
+# Coverage
+.coverage
+htmlcov/
+.coverage.*
