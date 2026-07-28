@@ -22,6 +22,8 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR
 from IPython.display import display
 from sklearn.base import clone
+from src.config import DATA, FIGURES
+
 
 
 def afficher_voisins(modele, X_train, y_train, X_test, y_test, logement=0):
@@ -415,7 +417,7 @@ def creation_arbre_decision_pdf(modele):
 
     graph = graphviz.Source(dot)
 
-    graph.render("arbre_decision")
+    graph.render(FIGURES / "arbre_decision")
 
 def afficher_feature_importances(modele):
 
@@ -575,7 +577,7 @@ def generer_donnees():
 
     # Chargement des données
 
-    df = pd.read_csv("data/projet_prix_maisons.csv")
+    df = pd.read_csv(DATA / "projet_prix_maisons.csv")
 
     # On isole la variable cible
 
