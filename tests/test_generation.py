@@ -53,3 +53,8 @@ def test_generation_reproductible():
     df2, X2, y2 = generer_donnees()
 
     assert df1.equals(df2)
+
+def test_shape(Xt_r, Xt_a):
+
+    assert Xt_r.shape == (250,13)
+    assert Xt_a.shape == (250,13)
