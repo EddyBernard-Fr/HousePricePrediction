@@ -55,12 +55,6 @@ def test_generation_reproductible():
     assert df1.equals(df2)
 
 def test_shape(Xt_r, Xt_a):
-<<<<<<< HEAD
 
     assert Xt_r.shape == (250,13)
     assert Xt_a.shape == (250,13)
-=======
-    
-    assert Xt_r.shape == (500,13)
-    assert Xt_a.shape == (500,13)
->>>>>>> d2f1784797c9e5797cd0849740eef3428f0bee0b
