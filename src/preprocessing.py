@@ -23,6 +23,7 @@ from sklearn.svm import SVR
 from IPython.display import display
 from sklearn.base import clone
 from src.config import DATA, FIGURES
+import shutil
 
 
 
@@ -406,6 +407,11 @@ def evolution_parametre(modele, parametre, valeurs, X_train, y_train, X_test, y_
 
 
 def creation_arbre_decision_pdf(modele):
+
+    if shutil.which("dot") is None:
+        raise RuntimeError(
+            "Graphviz n'est pas installé ou 'dot' n'est pas dans le PATH."
+        )
 
     dot = export_graphviz(
                 modele.named_steps["Tree_method"],
