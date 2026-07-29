@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    build: .
+    container_name: house-price-prediction
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./figures:/app/figures
