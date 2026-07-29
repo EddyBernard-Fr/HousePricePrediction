@@ -33,7 +33,7 @@ Projet de Machine Learning permettant de prédire le prix de maisons à partir d
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/<ton-utilisateur>/HousePricePrediction.git
+git clone https://github.com/EddyBernard-Fr/HousePricePrediction.git
 cd HousePricePrediction
 ```
 
