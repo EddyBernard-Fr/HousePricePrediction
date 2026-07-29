@@ -1,108 +1,59 @@
-# 🏠 House Price Prediction
+# House Price Prediction
 
-Projet de Machine Learning visant à prédire le prix d'un logement à partir de ses caractéristiques.
+Projet de Machine Learning permettant de prédire le prix de maisons à partir de différentes caractéristiques.
 
-Le projet compare plusieurs algorithmes de régression de scikit-learn ainsi que des bibliothèques spécialisées telles que XGBoost, LightGBM et CatBoost.
+## Fonctionnalités
 
----
-
-## Objectifs
-
-- Générer un jeu de données réaliste.
-- Réaliser une analyse exploratoire des données (EDA).
-- Construire des pipelines de prétraitement.
-- Comparer plusieurs modèles de régression.
-- Optimiser les hyperparamètres.
-- Interpréter les modèles à l'aide des coefficients, des importances de variables, des permutation importances et des valeurs SHAP.
+- Prétraitement des données
+- Entraînement de plusieurs modèles
+- Évaluation des performances
+- Importance des variables
+- Génération de l'arbre de décision au format PDF
 
 ---
 
-## Jeu de données
+## Structure du projet
 
-Le jeu de données est généré artificiellement.
-
-Chaque logement est décrit par :
-
-- Surface
-- Nombre de chambres
-- Nombre de salles de bain
-- Ville
-- Type de logement
-- Garage
-- Jardin
-- Année de construction
-- Distance au centre-ville
-
-Le prix est calculé à partir d'un modèle linéaire auquel est ajouté un bruit gaussien.
-
----
-
-## Modèles étudiés
-
-- Régression linéaire
-- Ridge
-- Lasso
-- Elastic Net
-- Arbre de décision
-- Random Forest
-- Gradient Boosting
-- XGBoost
-- LightGBM
-- CatBoost
-- K-Nearest Neighbors
-- Support Vector Regression
-
----
-
-## Évaluation
-
-Les modèles sont comparés à l'aide de plusieurs métriques :
-
-- MAE
-- RMSE
-- Coefficient de détermination (R²)
-
-Les meilleurs modèles atteignent un R² proche de **0,96**.
-
----
-
-## Interprétabilité
-
-Le projet comporte également plusieurs outils d'interprétation :
-
-- coefficients de régression
-- feature importance
-- permutation importance
-- SHAP values
-- arbres de décision
-- analyse des résidus
-
----
-
-## Technologies utilisées
-
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Scikit-learn
-- XGBoost
-- LightGBM
-- CatBoost
-- SHAP
-- Jupyter Notebook
+```text
+.
+├── data/
+├── figures/
+├── notebooks/
+├── src/
+├── tests/
+├── Dockerfile
+├── requirements.txt
+└── README.md
+```
 
 ---
 
 ## Installation
 
-Créer un environnement virtuel :
+### 1. Cloner le dépôt
 
 ```bash
-python -m venv .venv
+git clone https://github.com/<ton-utilisateur>/HousePricePrediction.git
+cd HousePricePrediction
 ```
 
-L'activer puis installer les dépendances :
+### 2. Créer un environnement virtuel
+
+#### Windows
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+#### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Installer les dépendances
 
 ```bash
 pip install -r requirements.txt
@@ -110,23 +61,99 @@ pip install -r requirements.txt
 
 ---
 
-## Lancer le projet
+## Dépendances système
 
-Ouvrir le notebook :
+### Graphviz
+
+La génération de l'arbre de décision nécessite Graphviz.
+
+### Windows
+
+Télécharger Graphviz :
+
+https://graphviz.org/download/
+
+Puis ajouter le dossier `bin` au `PATH`.
+
+### Ubuntu / Debian
 
 ```bash
-jupyter notebook
+sudo apt update
+sudo apt install graphviz
 ```
 
-ou
+### macOS
 
 ```bash
-code .
+brew install graphviz
 ```
-
-puis exécuter le notebook principal.
 
 ---
+
+## Exécution avec Jupyter
+
+```bash
+jupyter lab
+```
+
+Puis ouvrir :
+
+```
+notebooks/HousePricePrediction.ipynb
+```
+
+---
+
+## Exécution avec Docker
+
+Construire l'image :
+
+```bash
+docker build -t house-price-prediction .
+```
+
+Lancer Jupyter Lab :
+
+```bash
+docker run --rm -p 8888:8888 house-price-prediction
+```
+
+Puis ouvrir :
+
+```
+http://localhost:8888
+```
+
+---
+
+## Tests
+
+```bash
+pytest
+```
+
+Avec couverture :
+
+```bash
+pytest --cov=src --cov-report=term-missing
+```
+
+---
+
+## Technologies utilisées
+
+- Python
+- pandas
+- NumPy
+- scikit-learn
+- XGBoost
+- LightGBM
+- CatBoost
+- SHAP
+- Graphviz
+- Jupyter Lab
+- Docker
+- GitHub Actions
 
 ## Auteur
 
