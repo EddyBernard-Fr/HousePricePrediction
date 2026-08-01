@@ -1,18 +1,37 @@
-# House Price Prediction
+# House Price Prediction using Machine Learning
 
-Projet de Machine Learning permettant de prédire le prix de maisons à partir de différentes caractéristiques.
+## Highlights
 
-## Fonctionnalités
+- End-to-end supervised regression project
+- Data preprocessing and feature engineering
+- Comparison of multiple machine learning models
+- Hyperparameter tuning
+- Feature importance analysis
+- Decision Tree visualization
+- Model interpretation using SHAP
 
-- Prétraitement des données
-- Entraînement de plusieurs modèles
-- Évaluation des performances
-- Importance des variables
-- Génération de l'arbre de décision au format PDF
+This project aims to predict house prices from various property characteristics using supervised machine learning algorithms.
 
----
+The project follows a complete machine learning workflow, including data preprocessing, model comparison, hyperparameter tuning, model interpretation, and visualization.
 
-## Structure du projet
+## Project Overview
+
+The objective of this project is to build and evaluate regression models capable of accurately predicting house prices.
+
+Several machine learning algorithms are trained and compared in order to identify the best-performing model while gaining insight into the importance of each feature.
+
+## Features
+
+The project includes:
+
+- Data preprocessing
+- Training multiple machine learning models
+- Model performance evaluation
+- Feature importance analysis
+- SHAP explainability
+- Decision Tree visualization in PDF format
+
+## Project Structure
 
 ```text
 .
@@ -26,18 +45,31 @@ Projet de Machine Learning permettant de prédire le prix de maisons à partir d
 └── README.md
 ```
 
----
+## Technologies
+
+- Python
+- pandas
+- NumPy
+- scikit-learn
+- XGBoost
+- LightGBM
+- CatBoost
+- SHAP
+- Graphviz
+- Jupyter Lab
+- Docker
+- GitHub Actions
 
 ## Installation
 
-### 1. Cloner le dépôt
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/EddyBernard-Fr/HousePricePrediction.git
 cd HousePricePrediction
 ```
 
-### 2. Créer un environnement virtuel
+### 2. Create a virtual environment
 
 #### Windows
 
@@ -53,27 +85,25 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Installer les dépendances
+### 3. Install the dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Dépendances système
+## System Dependencies
 
 ### Graphviz
 
-La génération de l'arbre de décision nécessite Graphviz.
+Graphviz is required to generate the Decision Tree visualization.
 
 ### Windows
 
-Télécharger Graphviz :
+Download Graphviz:
 
 https://graphviz.org/download/
 
-Puis ajouter le dossier `bin` au `PATH`.
+Then add the `bin` directory to your system `PATH`.
 
 ### Ubuntu / Debian
 
@@ -88,73 +118,83 @@ sudo apt install graphviz
 brew install graphviz
 ```
 
----
-
-## Exécution avec Jupyter
+## Running with Jupyter
 
 ```bash
 jupyter lab
 ```
 
-Puis ouvrir :
+Then open:
 
-```
+```text
 notebooks/HousePricePrediction.ipynb
 ```
 
----
+## Running with Docker
 
-## Exécution avec Docker
-
-Construire l'image :
+Build the Docker image:
 
 ```bash
 docker build -t house-price-prediction .
 ```
 
-Lancer Jupyter Lab :
+Run Jupyter Lab:
 
 ```bash
 docker run --rm -p 8888:8888 house-price-prediction
 ```
 
-Puis ouvrir :
+Then open:
 
-```
+```text
 http://localhost:8888
 ```
 
----
-
-## Tests
+## Running the Tests
 
 ```bash
 pytest
 ```
 
-Avec couverture :
+With coverage:
 
 ```bash
 pytest --cov=src --cov-report=term-missing
 ```
 
----
+## Educational Objectives
 
-## Technologies utilisées
+This project was mainly developed to strengthen my understanding of:
 
-- Python
-- pandas
-- NumPy
-- scikit-learn
-- XGBoost
-- LightGBM
-- CatBoost
-- SHAP
-- Graphviz
-- Jupyter Lab
-- Docker
-- GitHub Actions
+- Machine learning workflows
+- Regression algorithms
+- Feature engineering
+- Hyperparameter tuning
+- Model explainability with SHAP
+- Reproducible machine learning projects
+- Docker-based development environments
 
-## Auteur
+## Future Work
 
-Eddy Bernard
+Possible improvements include:
+
+- Cross-validation for all regression models
+- Automated hyperparameter optimization
+- Model deployment with FastAPI
+- Interactive dashboard for predictions
+- Additional explainability techniques
+- CI/CD pipeline improvements
+
+## Author
+
+**Eddy Bernard**
+
+PhD in Mathematics & Theoretical Chemistry
+
+GitHub: https://github.com/EddyBernard-Fr
+
+This repository is part of my machine learning portfolio.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
